@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>TEXLA CRYPTO</title>
+    <link rel="icon" href="imagenes/blacklogo.png" type="image/png">
+    <link rel="stylesheet" href="xenStyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+   
+    <script src="./texnft.js"></script>
+    
+  </head>
+
+  <body class="container">
+   <div class="contenido">
+    <div id="dashboard">
+      <label class="gRank1" >Global Rank: </label><label id="gRank">  </label><br>
+      <label class="gRank1" >Liquid Supply: </label><label id="liquid">  </label><br>
+      <label class="gRank1" >Crank: </label><label id="cRank">  </label><br>
+      <label class="gRank1" >Power: </label><label id="power">  </label>
+    </div>
+    <select onchange="ConectarMetamask()" id="selectnet" name="selectnet" style="margin: 1% 1% 1% 1%; border-radius: 5%;  border-radius: 25px; width: auto;font-size: 18px;background-image: linear-gradient(to bottom right, #1a1a2e, #16213e, #1b2a4a, #253558, #2c3e67);  color: #ffffff; cursor: pointer;background-color:#253558;">
+      <option value="velas">Velas</option>
+      <option value="moonbeam">Moonbeam</option>
+      <option value="polygon">Polygon</option>
+      <option value="avax">Avax</option>
+      <option value="bsc">BSC</option>
+      <option value="tlos">Telos</option>
+    </select>   
+<input type="button" id="conectar" value="Conectar">
+  <label id="symbol"> VLX :</label><label> <label id="balancevlx"></label> <<< --------- >>> </label><label> TEX369 :</label><label id="balancevlxen"></label>
+  <br>
+  <fieldset  style=" display: inline-block ; margin: 1% 1% 1% 1%;width: 93%; height:auto;border-radius: 5px; color: white; "><legend>Mint Area</legend>
+  
+  <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>Vmu</legend><input id="vmu" type="text"  size="1.8"></fieldset>
+  <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>Term</legend><input id="term" type="text"  size="1.8"></fieldset>
+  <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>Category</legend>
+  <select onchange="NftCatClass()" id="selectcat" name="selectnet" style="margin: 1% 1% 1% 1%; border-radius: 5%;  border-radius: 25px; width: auto;font-size: 18px;background-image: linear-gradient(to bottom right, #1a1a2e, #16213e, #1b2a4a, #253558, #2c3e67);  color: #ffffff; cursor: pointer;background-color:#253558;">
+    <option value="apex">Apex</option>
+    <option value="limited">Limited</option>
+    <option value="collector">Collector</option>
+  </select> </fieldset>
+  <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>Class</legend>
+    <select onchange="NftCatClass()" id="selectclass" name="selectclass" style="margin: 1% 1% 1% 1%; border-radius: 5%;  border-radius: 25px; width: auto;font-size: 18px;background-image: linear-gradient(to bottom right, #1a1a2e, #16213e, #1b2a4a, #253558, #2c3e67);  color: #ffffff; cursor: pointer;background-color:#253558;">
+      <option value="rare">Rare</option>
+      <option value="epic">Epic</option>
+      <option value="legendary">Legendary</option>
+      <option value="exotic">Exotic</option>
+      <option value="xunicorn">Xunicorn</option>      
+    </select> </fieldset>
+    <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>TEX369 to Burn</legend><input id="texBurn" type="text"  size="9"></fieldset>
+
+  <button  type="button" onclick="EjecutarMint()" id="nftmint">Mint TEXNFT369</button><br>
+  </fieldset><br>
+  
+
+    <fieldset  style=" display: inline-block ; margin: 1% 1% 1% 1%;width: 93%; height:auto;border-radius: 5px; color: white;"><legend>NFT Area</legend>
+      
+      
+
+      <table id="nftlistado" style="border-spacing: 18px;"></table>
+   </fieldset>
+      <br>
+  
+
+
+</div>
+    
+
+  </body>
+  <footer class="container">
+    <p class="footer-text">Peps Labs &copy; 2023 Peps Company | All Rights Reserved</p>
+    <ul class="social-icons">
+      <li><a href="https://t.me/cryptoprofetaacademy" target="_blank"><i class="telegram"></i><img src="imagenes/Telegram_logo.svg.png" alt="telegram" width="27px" height="27px"></head></a></li>
+      <li  ><a href="documents/TEXLACrypto_Litepaper.pdf" download> <img src="imagenes/imagepdf.png" alt="litepaper" width="30px" height="30px"></a></li>
+    </ul>
+  </footer>
+</html>
