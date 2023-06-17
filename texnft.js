@@ -656,6 +656,8 @@ trHead.appendChild(thTime);
   btnClaim.type = "button";
   btnClaim.id = token;
   btnClaim.textContent = btnclaimtext;
+  btnClaim.style.width = "180px"; // Establece el ancho del botón
+  btnClaim.style.height = "45px"; // Establece la altura del botón
   btnClaim.classList.add("btnclaim");
   tdClaim.appendChild(btnClaim);
   // Agrega un evento click al botón y llama a la función claim() con el número de token del elemento
