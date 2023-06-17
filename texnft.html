@@ -8,12 +8,35 @@
     <script src="./node_modules/web3/dist/web3.min.js"></script>
    
     <script src="./texnft.js"></script>
-    
+    <style>
+      a.home-link {
+        
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #253558;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      a.home-link img {
+        width: 30px;
+        height: 30px;
+      }
+    </style>
   </head>
 
   <body class="container">
+    
    <div class="contenido">
+    
+    <!-- Resto del contenido del encabezado -->
     <div id="dashboard">
+      <a class="home-link" href="index.html">
+        <img src="imagenes/home1.png" alt="Home">
+      </a>
       <label class="gRank1" >Global Rank: </label><label id="gRank">  </label><br>
       <label class="gRank1" >Liquid Supply: </label><label id="liquid">  </label><br>
       <label class="gRank1" >Crank: </label><label id="cRank">  </label><br>
