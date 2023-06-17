@@ -559,7 +559,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
     const wallettoshare=document.getElementById('tpowerShare').value;
     const toapprove=BigInt( amountBurn * (10 ** 18));
         const contract = new web3.eth.Contract(JSON.parse(abiXen), contrato);   
-        const receipt = await contract.methods.approve(address,toapprove).send({
+        const receipt = await contract.methods.approve(contrato,toapprove).send({
             from: address,
             gas: 200000, // límite de gas para la transacción
             //gasPrice: web3.utils.toWei('10', 'gwei'), // precio de gas en wei
