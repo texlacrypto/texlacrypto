@@ -26,12 +26,12 @@
       <option value="tlos">Telos</option>
     </select>   
 <input type="button" id="conectar" value="Conectar">
-  <label id="symbol"> VLX :</label><label> <label id="balancevlx"></label> <<< --------- >>> </label><label> TEX369 :</label><label id="balancevlxen"></label>
+  <label id="symbol"> VLX :</label><label> <label id="balancevlx"></label> <<< --------- >>> </label><label> TEX :</label><label id="balancevlxen"></label>
   <br>
   <fieldset  style=" display: inline-block ; margin: 1% 1% 1% 1%;width: 93%; height:auto;border-radius: 5px; color: white; "><legend>Mint Area</legend>
   
   <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>Term</legend><input id="term" type="text"  size="1.8"></fieldset>
-  <button  type="button" onclick="Mint()" id="bmint">Mint</button> <button id="nftmint" onclick="window.location.href = 'texnft.html';">Mint TEXNFT369</button><br>
+  <button  type="button" onclick="Mint()" id="bmint">Mint</button> <button id="nftmint" onclick="window.location.href = 'texnft.html';">Mint TEXNFT</button><br>
   <input  id="claimr" type="button" value="Claim Rewards" onclick="ClaimRewards()"><label id="countdown"></label><br>
   <input  id="claimr" type="button" value="Claim&Share " onclick="ClaimShare()"><fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>Wallet to Share</legend><input id="textShare" type="text"  size="36"></fieldset>
   <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>%</legend><input id="textPorcent" type="text"  size="3" value="100" style="display: inline-block;"></fieldset><br>
@@ -48,12 +48,13 @@
     <input  id="claimStaked" type="button" value="Claim Staked" onclick="ClaimStaked()"></fieldset><br>
 
     <fieldset  style=" display: inline-block ; margin: 1% 1% 1% 1%;width: 93%; height:auto;border-radius: 5px; color: white;"><legend>Burn&Power Area</legend>
-      <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>TEX369 to Burn</legend><input id="amountburn" type="text"  size="9"  ></fieldset>
+      <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>TEX to Burn</legend><input id="amountburn" type="text"  size="9"  ></fieldset>
       <input  id="claimr" type="button" value="Get Power" onclick="GetPower()">  <fieldset  style="width: 3px; height: 3px; display: inline-block;"><legend>TEX369 to Approve</legend><input id="tapprove" type="text"  size="9"  ></fieldset>
       <input  id="claimr" type="button" value="Approve" onclick="Approve()"><br>
       
-      <legend>Wallet to Share</legend><input id="tpowerShare" type="text"  size="36"><input  id="tpowerShare" type="button" value="Get Power&Share" onclick="PowerandShare()"></fieldset></fieldset>
+      <legend>Wallet to Share</legend><input id="tpowerShare" type="text"  size="36"><input  id="tpowerShare" type="button" value="Get Power&Share" onclick="PowerandShare()">
       <br>
+      <legend>Amount to Send</legend><input id="tpoweramount" type="text"  size="9"><input  id="tpowerShare" type="button" value="Send Power" onclick="SendPower()"></fieldset></fieldset>
   
 
 
