@@ -618,7 +618,7 @@ trHead.appendChild(thTime);
             
              //const reward2=reward1.slice(0,-1);
              
-             const btnclaimtext="Claim "+ reward1;
+             const btnclaimtext="Claim "+ reward1*vmu;
              //alert(btnclaim);
              
 
