@@ -9,7 +9,7 @@ var nftabi='[ { "inputs": [ { "internalType": "address", "name": "xenCrypto_", "
 const abiMintInfo='[ { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "decodeMintInfo", "outputs": [ { "internalType": "uint256", "name": "term", "type": "uint256" }, { "internalType": "uint256", "name": "maturityTs", "type": "uint256" }, { "internalType": "uint256", "name": "rank", "type": "uint256" }, { "internalType": "uint256", "name": "amp", "type": "uint256" }, { "internalType": "uint256", "name": "eaa", "type": "uint256" }, { "internalType": "uint256", "name": "class", "type": "uint256" }, { "internalType": "bool", "name": "apex", "type": "bool" }, { "internalType": "bool", "name": "limited", "type": "bool" }, { "internalType": "bool", "name": "redeemed", "type": "bool" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "term", "type": "uint256" }, { "internalType": "uint256", "name": "maturityTs", "type": "uint256" }, { "internalType": "uint256", "name": "rank", "type": "uint256" }, { "internalType": "uint256", "name": "amp", "type": "uint256" }, { "internalType": "uint256", "name": "eaa", "type": "uint256" }, { "internalType": "uint256", "name": "class_", "type": "uint256" }, { "internalType": "bool", "name": "redeemed", "type": "bool" } ], "name": "encodeMintInfo", "outputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "getAMP", "outputs": [ { "internalType": "uint256", "name": "amp", "type": "uint256" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "getClass", "outputs": [ { "internalType": "uint256", "name": "class_", "type": "uint256" }, { "internalType": "bool", "name": "apex", "type": "bool" }, { "internalType": "bool", "name": "limited", "type": "bool" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "getEAA", "outputs": [ { "internalType": "uint256", "name": "eaa", "type": "uint256" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "getMaturityTs", "outputs": [ { "internalType": "uint256", "name": "maturityTs", "type": "uint256" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "getRank", "outputs": [ { "internalType": "uint256", "name": "rank", "type": "uint256" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "getRedeemed", "outputs": [ { "internalType": "bool", "name": "redeemed", "type": "bool" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "info", "type": "uint256" } ], "name": "getTerm", "outputs": [ { "internalType": "uint256", "name": "term", "type": "uint256" } ], "stateMutability": "pure", "type": "function" } ]'
 //const contrato='0x0D6A3F69048D8b49463E8f4Ad3cA4B278E55de67'0xb564a5767a00ee9075cac561c427643286f8f4e1   0x2ab0e9e4ee70fff1fb9d67031e44f6410170d00e  0xC0C5AA69Dbe4d6DDdfBc89c0957686ec60F24389;
 let contrato='0xd0Dd0f6220628534Bd4BC31E3dCC93e8bf47d152';
-let nftcontrato='0xBC95e6089E64e4A8C40753d2205f40b7634D1d19';
+let nftcontrato='0x96c42d9Bc330A7aa39CC6423B27384587C3CB203';
 let MintInfocontract='0x90917Bece267794AD5D2D347B05D88Ec3658B5b5';
 var uterm="";
 var maturityTs="";
@@ -88,7 +88,7 @@ async function ConectarMetamask()
   if(netw.value==='velas'){
     //alert(netw.value);
       netid ='111';
-      contrato = '0xd6688259A6F9656dc6b29f14CD8562f288870505';
+      contrato = '0xd0Dd0f6220628534Bd4BC31E3dCC93e8bf47d152';
       symb.textContent='VLX';
   }
   if(netw.value==='moonbeam'){
@@ -488,7 +488,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           if(currentNetwork==='106'){
             //alert(netw.value);
             netw.value='velas';
-              contrato = '0x29CD7F889cD8891020DfA6C7EA4b811ae29AA607';
+              contrato = '0xd0Dd0f6220628534Bd4BC31E3dCC93e8bf47d152';
               symb.textContent='VLX';
               ConectarMetamask();
           }
