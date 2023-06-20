@@ -538,7 +538,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
             address = (await web3.eth.getAccounts())[0];
             
             const tbody=document.getElementById('nftlistado');
-             
+           
             
 // Crear la fila del encabezado (<thead>)
 var thead = document.createElement("thead");
@@ -597,6 +597,8 @@ trHead.appendChild(thTime);
               const Amplifierr = await contract2.methods.getAMP(info).call();
               const EAARR = await contract2.methods.getEAA(info).call();
               const nftcat = await contract2.methods.getClass(info).call();
+              const redeemed = await contract2.methods.getRedeemed(info).call();
+              
               var apex=nftcat[1];
               var limited=nftcat[2];
               let catnft = 'Collector';
@@ -656,6 +658,12 @@ trHead.appendChild(thTime);
   btnClaim.type = "button";
   btnClaim.id = token;
   btnClaim.textContent = btnclaimtext;
+  if(redeemed==true){
+    btnClaim.textContent="Redeemed";
+    btnClaim.disabled=true;
+    
+  }
+  
   btnClaim.style.width = "180px"; // Establece el ancho del botón
   btnClaim.style.height = "45px"; // Establece la altura del botón
   btnClaim.classList.add("btnclaim");
@@ -668,6 +676,10 @@ trHead.appendChild(thTime);
   // Crea una celda <td> para el tiempo
   var tdTime = document.createElement("td");
   tdTime.textContent = fecha;
+  if(redeemed==true){
+    tdTime.textContent = "Redeemed";
+    
+  }
   tr.appendChild(tdTime);
 
 // Crea una celda <td> para la imagen
@@ -730,6 +742,7 @@ calculateTotalPages();
       
           TestConection();
           const  vmu= document.getElementById('vmu');
+          vmu.value=90;
           const  term= document.getElementById('term');
            var vmunft=parseInt(vmu.value);
            var termnft=parseInt(term.value);
@@ -751,7 +764,8 @@ calculateTotalPages();
 
        async function NftCatClass(){
           TestConection();
-
+          const  vmu= document.getElementById('vmu');
+          vmu.value=90;
           const selcatg=document.getElementById('selectcat');
           const selclass=document.getElementById('selectclass');
           const burntext=document.getElementById('texBurn');
