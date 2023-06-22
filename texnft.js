@@ -786,7 +786,7 @@ calculateTotalPages();
        async function NftCatClass(){
           TestConection();
           const  vmu= document.getElementById('vmu');
-          vmu.value=90;
+          vmu.value=60;
           const selcatg=document.getElementById('selectcat');
           const selclass=document.getElementById('selectclass');
           const burntext=document.getElementById('texBurn');
