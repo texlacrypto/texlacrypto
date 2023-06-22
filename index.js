@@ -101,7 +101,7 @@ async function ConectarMetamask()
   if(netw.value==='tlos'){
     //alert(netw.value);
       netid='40';
-      contrato = '0xe06d5F6ce8a51EC0296a90B10ceA2fc66C0E0f5A';
+      contrato = '0x0d8ef82D3dce71D1FdCE83f4a6C6B9692B87Efd9';
       symb.textContent='TLOS';
       
   }
@@ -626,7 +626,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           if(currentNetwork==='40'){
             //alert(netw.value);
               netw.value='tlos';
-             
+              contrato = '0x0d8ef82D3dce71D1FdCE83f4a6C6B9692B87Efd9';
               symb.textContent='TLOS';
               ConectarMetamask();
           }          

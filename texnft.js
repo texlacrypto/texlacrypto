@@ -89,8 +89,9 @@ async function ConectarMetamask()
     //alert(netw.value);
       netid ='106';
       contrato = '0xeCBFcff0df87b2e10fad55F310858393978061c0';
-      MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
       nftcontrato='0x1806Abd7e3f900Fab70A2D75A1b56ba0e0878081';
+      MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
+      
       symb.textContent='VLX';
   }
   if(netw.value==='moonbeam'){
@@ -122,7 +123,10 @@ async function ConectarMetamask()
   if(netw.value==='tlos'){
     //alert(netw.value);
       netid='40';
-      contrato = '0xe06d5F6ce8a51EC0296a90B10ceA2fc66C0E0f5A';
+      contrato = '0x0d8ef82D3dce71D1FdCE83f4a6C6B9692B87Efd9';
+      nftcontrato='0x91eefCc67A0cC3e8a27B86b389386129228D3D42';
+      MintInfocontract='0x91DE3700573c7E19740C49240E413798c81337c9';
+      
       symb.textContent='TLOS';
       
   }
@@ -491,8 +495,9 @@ function calculateTimeLeft(maturityTimeInSeconds) {
             //alert(netw.value);
             netw.value='velas';
               contrato = '0xeCBFcff0df87b2e10fad55F310858393978061c0';
-              MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
               nftcontrato='0x1806Abd7e3f900Fab70A2D75A1b56ba0e0878081';
+              MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
+              
               symb.textContent='VLX';
               ConectarMetamask();
           }
@@ -527,7 +532,10 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           if(currentNetwork==='40'){
             //alert(netw.value);
               netw.value='tlos';
-             
+              contrato = '0x0d8ef82D3dce71D1FdCE83f4a6C6B9692B87Efd9';
+              nftcontrato='0x91eefCc67A0cC3e8a27B86b389386129228D3D42';
+              MintInfocontract='0x91DE3700573c7E19740C49240E413798c81337c9';
+              
               symb.textContent='TLOS';
               ConectarMetamask();
           }
