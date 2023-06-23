@@ -23,6 +23,7 @@ ethereum.on('accountsChanged', function () {
     // Recargar la página automáticamente
     
     location.reload();
+    ObtenerCuenta();
     ObtenerMetamaskId();
     ActualizarDasboard();
     ListarNft();
@@ -37,8 +38,9 @@ window.addEventListener('load', () => {
     NftCatClass();
   });
   window.addEventListener("load", function() {
-    ListadoTEXNFT();
-    NftCatClass();
+    ObtenerCuenta();
+    //ListadoTEXNFT();
+    //NftCatClass();
   });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -59,8 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ObtenerMetamaskId();
     ConectarMetamask();
     ActualizarDasboard();
-    ListadoTEXNFT();
-    NftCatClass();
+   
   });
   
   window.onload = function() {
@@ -76,7 +77,19 @@ document.addEventListener("DOMContentLoaded", function() {
 //  console.log("La opción seleccionada ha cambiado");
   // Aquí puedes agregar cualquier otra lógica que desees ejecutar
 //}
+// Obtén el elemento select
+const select = document.getElementById('selectnet');
 
+// Agrega un evento al elemento select para guardar su valor en localStorage
+select.addEventListener('change', (event) => {
+  localStorage.setItem('valor-select', event.target.value);
+});
+
+// Verifica si hay un valor guardado en localStorage y configura el valor seleccionado en el elemento select
+const valorGuardado = localStorage.getItem('valor-select');
+if (valorGuardado) {
+  select.value = valorGuardado;
+}
 
 async function ConectarMetamask()
 {
@@ -84,6 +97,16 @@ async function ConectarMetamask()
   let symb = document.getElementById("symbol");
   const post=netw.selectedIndex;
   let netid='106';
+
+  netw.addEventListener('change', (event) => {
+    localStorage.setItem('valor-select', event.target.value);
+  });
+  
+  // Verifica si hay un valor guardado en localStorage y configura el valor seleccionado en el elemento select
+  const valorGuardado = localStorage.getItem('valor-select');
+  if (valorGuardado) {
+    select.value = valorGuardado;
+  }
   
   if(netw.value==='velas'){
     //alert(netw.value);
@@ -255,7 +278,10 @@ async function ObtenerCuenta(){
         var ultimos = address.slice(-6);
             var conectar = document.getElementById("conectar");          
             // Cambia el valor del botón
-            conectar.value = primeros + "........."+ ultimos;    
+            conectar.value = primeros + "........."+ ultimos;   
+            ListadoTEXNFT();
+      NftCatClass();
+      
 
 
 }   
@@ -301,7 +327,7 @@ async function LiquidSupply()
 
 function ActualizarDasboard()
 {
-    ObtenerCuenta();
+    //ObtenerCuenta();
     GlobaRank();
     UserMints();
     LiquidSupply();
@@ -500,6 +526,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               
               symb.textContent='VLX';
               ConectarMetamask();
+              
           }
           if(currentNetwork==='1284'){
             //alert(netw.value);
@@ -507,6 +534,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0xfdE37824F9Dc448180CC6e38E0fd373493BA5eE4';
               symb.textContent='GLMR';
               ConectarMetamask();
+              
           }
           if(currentNetwork==='56'){
             //alert(netw.value);
@@ -514,6 +542,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0xF7Ba79A8dF627D5f04923637A9fDb1dc0435cBcd';
               symb.textContent='BNB';
               ConectarMetamask();
+             
           }
           if(currentNetwork==='43114'){
             //alert(netw.value);
@@ -521,6 +550,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0x20B9292c3D4b1D5702fB1Da658653934CEE6ea52';
               symb.textContent='AVAX';
               ConectarMetamask();
+              
           }
           if(currentNetwork==='137'){
             //alert(netw.value);
@@ -528,6 +558,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
              
               symb.textContent='MATIC';
               ConectarMetamask();
+              
           }
           if(currentNetwork==='40'){
             //alert(netw.value);
@@ -538,6 +569,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               
               symb.textContent='TLOS';
               ConectarMetamask();
+             
           }
           
          
