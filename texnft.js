@@ -20,57 +20,54 @@ var globalrank=null;
 
 
 ethereum.on('accountsChanged', function () {
-    // Recargar la página automáticamente
-    
-    location.reload();
-    ObtenerCuenta();
-    ObtenerMetamaskId();
-    ActualizarDasboard();
-    ListarNft();
-    NftCatClass();
+  // Recargar la página automáticamente
+  
+  location.reload();
+  ObtenerCuenta();
+  
+  ActualizarDasboard();
+ 
 
-  });
-window.addEventListener('load', () => {
+});
+/*window.addEventListener('load', () => {
+ObtenerMetamaskId();
+  ActualizarDasboard();
+  
+});*/
+window.addEventListener("load", function() {
   ObtenerMetamaskId();
-    ActualizarDasboard();
-    ConectarMetamask();
-    ListadoTEXNFT();
-    NftCatClass();
-  });
-  window.addEventListener("load", function() {
-    ObtenerCuenta();
-    //ListadoTEXNFT();
-    //NftCatClass();
-  });
+ // ObtenerCuenta();
+  //ListadoTEXNFT();
+  //NftCatClass();
+});
 
 document.addEventListener("DOMContentLoaded", function() {
-     conectar = document.getElementById("conectar");
-     ObtenerMetamaskId();
-    conectar.addEventListener("click", ConectarMetamask);
-    ConectarMetamask();
-    ActualizarDasboard();
-    ListadoTEXNFT();
-    NftCatClass();
-
-
-  });
-
-  const netw=document.getElementById('selectnet');
-  netw.addEventListener("change", function() {
-    // Llamar a la función deseada
-    ObtenerMetamaskId();
-    ConectarMetamask();
-    ActualizarDasboard();
+   conectar = document.getElementById("conectar");
    
-  });
+  conectar.addEventListener("click", ConectarMetamask);
   
-  window.onload = function() {
-    ObtenerMetamaskId();
-    ConectarMetamask();
-    ActualizarDasboard();
-    ListadoTEXNFT();
-    NftCatClass();
-  };
+  ActualizarDasboard();
+ 
+
+
+});
+
+const netw=document.getElementById('selectnet');
+netw.addEventListener("change", function() {
+  // Llamar a la función deseada
+
+  
+  
+  ActualizarDasboard();
+ 
+});
+
+window.onload = function() {
+  ObtenerMetamaskId();
+  
+  ActualizarDasboard();
+ 
+};
 
 // Definir la función a llamar
 //function doSomething() {
@@ -526,6 +523,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               
               symb.textContent='VLX';
               ConectarMetamask();
+              ObtenerCuenta();
               
           }
           if(currentNetwork==='1284'){
@@ -534,6 +532,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0xfdE37824F9Dc448180CC6e38E0fd373493BA5eE4';
               symb.textContent='GLMR';
               ConectarMetamask();
+              ObtenerCuenta();
               
           }
           if(currentNetwork==='56'){
@@ -542,6 +541,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0xF7Ba79A8dF627D5f04923637A9fDb1dc0435cBcd';
               symb.textContent='BNB';
               ConectarMetamask();
+              ObtenerCuenta();
              
           }
           if(currentNetwork==='43114'){
@@ -550,14 +550,17 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0x20B9292c3D4b1D5702fB1Da658653934CEE6ea52';
               symb.textContent='AVAX';
               ConectarMetamask();
+              ObtenerCuenta();
               
           }
           if(currentNetwork==='137'){
             //alert(netw.value);
               netw.value='polygon';
              
+             
               symb.textContent='MATIC';
               ConectarMetamask();
+              ObtenerCuenta();
               
           }
           if(currentNetwork==='40'){
@@ -569,6 +572,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               
               symb.textContent='TLOS';
               ConectarMetamask();
+              ObtenerCuenta();
              
           }
           
