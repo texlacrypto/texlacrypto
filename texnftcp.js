@@ -1,7 +1,6 @@
 
-var currentPage = 1;
-var rowsPerPage = 9;
-var totalPages = 1;
+
+
 
 var address="";
 var abiXen='[ { "inputs": [ { "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" } ], "name": "approve", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" } ], "name": "Approval", "type": "event" }, { "inputs": [ { "internalType": "address", "name": "user", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" } ], "name": "burn", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "claimMintReward", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "other", "type": "address" }, { "internalType": "uint256", "name": "pct", "type": "uint256" } ], "name": "claimMintRewardAndShare", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "pct", "type": "uint256" }, { "internalType": "uint256", "name": "term", "type": "uint256" } ], "name": "claimMintRewardAndStake", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "term", "type": "uint256" } ], "name": "claimRank", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "subtractedValue", "type": "uint256" } ], "name": "decreaseAllowance", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "user", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" } ], "name": "GetPower", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "user", "type": "address" }, { "internalType": "address", "name": "share", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" } ], "name": "GetPowerandShare", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "addedValue", "type": "uint256" } ], "name": "increaseAllowance", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "user", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "rewardAmount", "type": "uint256" } ], "name": "MintClaimed", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "user", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "term", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "rank", "type": "uint256" } ], "name": "RankClaimed", "type": "event" }, { "inputs": [ { "internalType": "address", "name": "user", "type": "address" }, { "internalType": "uint256", "name": "power", "type": "uint256" } ], "name": "SacrifyPower", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "user", "type": "address" }, { "internalType": "address", "name": "share", "type": "address" }, { "internalType": "uint256", "name": "power", "type": "uint256" } ], "name": "SendPower", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "amount", "type": "uint256" }, { "internalType": "uint256", "name": "term", "type": "uint256" } ], "name": "stake", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "user", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "term", "type": "uint256" } ], "name": "Staked", "type": "event" }, { "inputs": [ { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" } ], "name": "transfer", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "inputs": [ { "internalType": "address", "name": "from", "type": "address" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "internalType": "bool", "name": "", "type": "bool" } ], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "withdraw", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [ { "indexed": true, "internalType": "address", "name": "user", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": false, "internalType": "uint256", "name": "reward", "type": "uint256" } ], "name": "Withdrawn", "type": "event" }, { "inputs": [], "name": "activeMinters", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "activeStakes", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "spender", "type": "address" } ], "name": "allowance", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "AUTHORS", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "account", "type": "address" } ], "name": "balanceOf", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "DAYS_IN_YEAR", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [ { "internalType": "uint8", "name": "", "type": "uint8" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "EAA_PM_START", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "EAA_PM_STEP", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "EAA_RANK_STEP", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "GENESIS_RANK", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "genesisTs", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getCurrentAMP", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getCurrentAPY", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getCurrentEAAR", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getCurrentMaxTerm", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "uint256", "name": "rankDelta", "type": "uint256" }, { "internalType": "uint256", "name": "amplifier", "type": "uint256" }, { "internalType": "uint256", "name": "term", "type": "uint256" }, { "internalType": "uint256", "name": "eaa", "type": "uint256" } ], "name": "getGrossReward", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "pure", "type": "function" }, { "inputs": [], "name": "getUserMint", "outputs": [ { "components": [ { "internalType": "address", "name": "user", "type": "address" }, { "internalType": "uint256", "name": "term", "type": "uint256" }, { "internalType": "uint256", "name": "maturityTs", "type": "uint256" }, { "internalType": "uint256", "name": "rank", "type": "uint256" }, { "internalType": "uint256", "name": "amplifier", "type": "uint256" }, { "internalType": "uint256", "name": "eaaRate", "type": "uint256" } ], "internalType": "struct TEXLACrypto.MintInfo", "name": "", "type": "tuple" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "getUserStake", "outputs": [ { "components": [ { "internalType": "uint256", "name": "term", "type": "uint256" }, { "internalType": "uint256", "name": "maturityTs", "type": "uint256" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }, { "internalType": "uint256", "name": "apy", "type": "uint256" } ], "internalType": "struct TEXLACrypto.StakeInfo", "name": "", "type": "tuple" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "globalRank", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "MAX_PENALTY_PCT", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "MAX_TERM_END", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "MAX_TERM_START", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "MIN_TERM", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [ { "internalType": "address", "name": "", "type": "address" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "POWER_PER_XEN", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "powerBalances", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "powerSacrify", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "REWARD_AMPLIFIER_END", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "REWARD_AMPLIFIER_START", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "SECONDS_IN_DAY", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [ { "internalType": "string", "name": "", "type": "string" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "TERM_AMPLIFIER", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "TERM_AMPLIFIER_THRESHOLD", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalXenStaked", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "userBurns", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "userMints", "outputs": [ { "internalType": "address", "name": "user", "type": "address" }, { "internalType": "uint256", "name": "term", "type": "uint256" }, { "internalType": "uint256", "name": "maturityTs", "type": "uint256" }, { "internalType": "uint256", "name": "rank", "type": "uint256" }, { "internalType": "uint256", "name": "amplifier", "type": "uint256" }, { "internalType": "uint256", "name": "eaaRate", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [ { "internalType": "address", "name": "", "type": "address" } ], "name": "userStakes", "outputs": [ { "internalType": "uint256", "name": "term", "type": "uint256" }, { "internalType": "uint256", "name": "maturityTs", "type": "uint256" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }, { "internalType": "uint256", "name": "apy", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "WITHDRAWAL_WINDOW_DAYS", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "XEN_APY_DAYS_STEP", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "XEN_APY_END", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "XEN_APY_START", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "XEN_MIN_BURN", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "XEN_MIN_STAKE", "outputs": [ { "internalType": "uint256", "name": "", "type": "uint256" } ], "stateMutability": "view", "type": "function" } ]';
@@ -11,6 +10,7 @@ const abiMintInfo='[ { "inputs": [ { "internalType": "uint256", "name": "info", 
 let contrato='0xeCBFcff0df87b2e10fad55F310858393978061c0';
 let nftcontrato='0x1806Abd7e3f900Fab70A2D75A1b56ba0e0878081';
 let MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
+
 var uterm="";
 var maturityTs="";
 var crank="";
@@ -20,73 +20,60 @@ var globalrank=null;
 
 
 ethereum.on('accountsChanged', function () {
-  // Recargar la página automáticamente
-  
-  location.reload();
-  ObtenerCuenta();
-  
-  ActualizarDasboard();
- 
+    // Recargar la página automáticamente
+    
+    location.reload();
+   // ObtenerMetamaskId();
+    //ActualizarDasboard();
 
-});
-/*window.addEventListener('load', () => {
-ObtenerMetamaskId();
-  ActualizarDasboard();
-  
-});*/
-window.addEventListener("load", function() {
+  });
+window.addEventListener('load', () => {
+ 
   ObtenerMetamaskId();
- // ObtenerCuenta();
-  //ListadoTEXNFT();
+ //ConectarMetamask();
   //NftCatClass();
-});
+ // ListadoTEXNFT();
+    
+    
+  });
+
 
 document.addEventListener("DOMContentLoaded", function() {
-   conectar = document.getElementById("conectar");
+     conectar = document.getElementById("conectar");
+     //ObtenerMetamaskId();
+    conectar.addEventListener("click", ConectarMetamask);
+    
    
-  conectar.addEventListener("click", ConectarMetamask);
+    
+  });
+
+  const netw=document.getElementById('selectnet');
+  netw.addEventListener("change", function() {
+    // Llamar a la función deseada
+   // ObtenerMetamaskId();
+    //ConectarMetamask();
+   
+    ActualizarDasboard();
+
+  });
   
-  ActualizarDasboard();
- 
-
-
-});
-
-const netw=document.getElementById('selectnet');
-netw.addEventListener("change", function() {
-  // Llamar a la función deseada
-
-  
-  
-  ActualizarDasboard();
- 
-});
-
-window.onload = function() {
-  ObtenerMetamaskId();
-  
-  ActualizarDasboard();
- 
-};
+  window.onload = function() {
+    ObtenerMetamaskId();
+   //ConectarMetamask();
+   // NftCatClass();
+   // ListadoTEXNFT();
+   
+    
+    
+    
+  };
 
 // Definir la función a llamar
 //function doSomething() {
 //  console.log("La opción seleccionada ha cambiado");
   // Aquí puedes agregar cualquier otra lógica que desees ejecutar
 //}
-// Obtén el elemento select
-const select = document.getElementById('selectnet');
 
-// Agrega un evento al elemento select para guardar su valor en localStorage
-select.addEventListener('change', (event) => {
-  localStorage.setItem('valor-select', event.target.value);
-});
-
-// Verifica si hay un valor guardado en localStorage y configura el valor seleccionado en el elemento select
-const valorGuardado = localStorage.getItem('valor-select');
-if (valorGuardado) {
-  select.value = valorGuardado;
-}
 
 async function ConectarMetamask()
 {
@@ -94,16 +81,6 @@ async function ConectarMetamask()
   let symb = document.getElementById("symbol");
   const post=netw.selectedIndex;
   let netid='106';
-
-  netw.addEventListener('change', (event) => {
-    localStorage.setItem('valor-select', event.target.value);
-  });
-  
-  // Verifica si hay un valor guardado en localStorage y configura el valor seleccionado en el elemento select
-  const valorGuardado = localStorage.getItem('valor-select');
-  if (valorGuardado) {
-    select.value = valorGuardado;
-  }
   
   if(netw.value==='velas'){
     //alert(netw.value);
@@ -111,7 +88,6 @@ async function ConectarMetamask()
       contrato = '0xeCBFcff0df87b2e10fad55F310858393978061c0';
       nftcontrato='0x1806Abd7e3f900Fab70A2D75A1b56ba0e0878081';
       MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
-      
       symb.textContent='VLX';
   }
   if(netw.value==='moonbeam'){
@@ -146,7 +122,6 @@ async function ConectarMetamask()
       contrato = '0x0d8ef82D3dce71D1FdCE83f4a6C6B9692B87Efd9';
       nftcontrato='0x91eefCc67A0cC3e8a27B86b389386129228D3D42';
       MintInfocontract='0x91DE3700573c7E19740C49240E413798c81337c9';
-      
       symb.textContent='TLOS';
       
   }
@@ -184,15 +159,21 @@ async function ConectarMetamask()
       else {
           console.log('No web3 provider detected');
       }
-      ActualizarDasboard();
       ObtenerCuenta();
+      NftCatClass();
+      
+      ActualizarDasboard();      
       GlobaRank();
+      
 
     } else {
       //alert('Please connect  Metamask to ' + netw.value + ' Blockchain');
       var conectar = document.getElementById("conectar");          
             // Cambia el valor del botón
             conectar.value = "Connect " + netw.value + " Chain";
+            const tbody=document.getElementById('nftlistado');
+           
+            tbody.innerHTML = "";
     }
   } else {
     alert('Please install Metamask');
@@ -275,11 +256,10 @@ async function ObtenerCuenta(){
         var ultimos = address.slice(-6);
             var conectar = document.getElementById("conectar");          
             // Cambia el valor del botón
-            conectar.value = primeros + "........."+ ultimos;   
-            ListadoTEXNFT();
+            conectar.value = primeros + "........."+ ultimos;    
             NftCatClass();
-      
-
+            ListadoTEXNFT();
+            
 
 }   
 
@@ -290,7 +270,32 @@ async function ObtenerCuenta(){
 }
 
 
+async function Mint()
+{ 
+      TestConection();
 
+    
+   const contract = new web3.eth.Contract(JSON.parse(abiXen), contrato);
+    //claimRank
+    
+    var aux=document.getElementById('term');
+    var term=parseInt(aux.value);
+    if (isNaN(term) || term % 1 !== 0) {
+        alert("El valor debe ser entero.");
+      } else {
+        address = (await web3.eth.getAccounts())[0];
+        
+        const receipt = await contract.methods.claimRank(term).send({
+            from: address,
+            gas: 200000, // límite de gas para la transacción
+            //gasPrice: web3.utils.toWei('10', 'gwei'), // precio de gas en wei
+            //maxFeePerGas: web3.utils.toWei('20', 'gwei'), // precio máximo de gas en wei
+            //maxPriorityFeePerGas: web3.utils.toWei('10', 'gwei') // precio máximo de gas prioritario en wei
+          });
+          
+      }
+      ActualizarDasboard();
+}
 
 
 async function GlobaRank()
@@ -329,23 +334,8 @@ function ActualizarDasboard()
     UserMints();
     LiquidSupply();
     UserStakes();
-    ListadoTEXNFT();
+    
    
-}
-async function ClaimRewards()
-{ 
-      TestConection();
-
-   
-    const contract = new web3.eth.Contract(JSON.parse(abiXen), contrato);   
-    const receipt = await contract.methods.claimMintReward().send({
-        from: address,
-        gas: 600000, // límite de gas para la transacción
-        //gasPrice: web3.utils.toWei('10', 'gwei'), // precio de gas en wei
-        //maxFeePerGas: web3.utils.toWei('20', 'gwei'), // precio máximo de gas en wei
-        //maxPriorityFeePerGas: web3.utils.toWei('10', 'gwei') // precio máximo de gas prioritario en wei
-      });
-    ActualizarDasboard();
 }
 
 
@@ -435,6 +425,7 @@ function Penalty(secsLate) {
   return Math.min(penalty, 99);
 }
 
+
 function calculateTimeLeft(maturityTimeInSeconds) {
   const maturityTime = maturityTimeInSeconds * 1000; // Convertir a milisegundos
   const maturityDate = new Date(maturityTime); // Obtener la fecha de madurez
@@ -455,26 +446,30 @@ function calculateTimeLeft(maturityTimeInSeconds) {
   }
 }
 
-
-
-  function Limpiar(){
-
-    const walletShare=document.getElementById('textShare').value;
-    if(!(/^(0x)?[0-9a-fA-F]{40}$/.test(walletShare))){
-    document.getElementById('textShare').value="";}
-
-
-    document.getElementById('amountStake').value="";
+      
+      
+      
     
-  }
-  
+
       
+      async function GetPower(){
+         
+        TestConection();       
+        address = (await web3.eth.getAccounts())[0];
+    const amountBurn=document.getElementById('amountburn').value;
+    
+   
+        const contract = new web3.eth.Contract(JSON.parse(abiXen), contrato);   
+        const receipt = await contract.methods.GetPower(address,amountBurn).send({
+            from: address,
+            gas: 200000, // límite de gas para la transacción
+            //gasPrice: web3.utils.toWei('10', 'gwei'), // precio de gas en wei
+            //maxFeePerGas: web3.utils.toWei('20', 'gwei'), // precio máximo de gas en wei
+            //maxPriorityFeePerGas: web3.utils.toWei('10', 'gwei') // precio máximo de gas prioritario en wei
+          });
+        ActualizarDasboard();           
+      }
       
-      
-      
-      
-      
-     
       async function Approve(amount){
          
         TestConection();    
@@ -493,7 +488,6 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           });
         ActualizarDasboard();           
       }
-
       async function GetPowerAmount(){
          
         TestConection();    
@@ -517,14 +511,13 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           if(currentNetwork==='106'){
             //alert(netw.value);
             netw.value='velas';
-              contrato = '0xeCBFcff0df87b2e10fad55F310858393978061c0';
-              nftcontrato='0x1806Abd7e3f900Fab70A2D75A1b56ba0e0878081';
-              MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
-              
+            contrato = '0xeCBFcff0df87b2e10fad55F310858393978061c0';
+            nftcontrato='0x1806Abd7e3f900Fab70A2D75A1b56ba0e0878081';
+            MintInfocontract='0x5D74a792cdF0A4a038fb86aFC4B8AE6819A6b165';
               symb.textContent='VLX';
               ConectarMetamask();
-              ObtenerCuenta();
               
+
           }
           if(currentNetwork==='1284'){
             //alert(netw.value);
@@ -532,8 +525,6 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0xfdE37824F9Dc448180CC6e38E0fd373493BA5eE4';
               symb.textContent='GLMR';
               ConectarMetamask();
-              ObtenerCuenta();
-              
           }
           if(currentNetwork==='56'){
             //alert(netw.value);
@@ -541,8 +532,6 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0xF7Ba79A8dF627D5f04923637A9fDb1dc0435cBcd';
               symb.textContent='BNB';
               ConectarMetamask();
-              ObtenerCuenta();
-             
           }
           if(currentNetwork==='43114'){
             //alert(netw.value);
@@ -550,18 +539,13 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0x20B9292c3D4b1D5702fB1Da658653934CEE6ea52';
               symb.textContent='AVAX';
               ConectarMetamask();
-              ObtenerCuenta();
-              
           }
           if(currentNetwork==='137'){
             //alert(netw.value);
               netw.value='polygon';
              
-             
               symb.textContent='MATIC';
               ConectarMetamask();
-              ObtenerCuenta();
-              
           }
           if(currentNetwork==='40'){
             //alert(netw.value);
@@ -569,17 +553,13 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0x0d8ef82D3dce71D1FdCE83f4a6C6B9692B87Efd9';
               nftcontrato='0x91eefCc67A0cC3e8a27B86b389386129228D3D42';
               MintInfocontract='0x91DE3700573c7E19740C49240E413798c81337c9';
-              
               symb.textContent='TLOS';
               ConectarMetamask();
-              ObtenerCuenta();
              
-          }
-          
-         
-        
-         
+          }          
+                 
       }
+     
       async function ListadoTEXNFT()
       { 
             TestConection();
@@ -587,7 +567,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
             
             const tbody=document.getElementById('nftlistado');
            
-            
+            tbody.innerHTML = "";
 // Crear la fila del encabezado (<thead>)
 var thead = document.createElement("thead");
 tbody.appendChild(thead);
@@ -632,7 +612,7 @@ trHead.appendChild(thImg);
             const receipt = await contract.methods.ownedTokens().call({ from: address });            
             
            
-
+           
 
   
             
@@ -650,21 +630,22 @@ trHead.appendChild(thImg);
               const EAARR = await contract2.methods.getEAA(info).call();
               const nftcat = await contract2.methods.getClass(info).call();
               const redeemed = await contract2.methods.getRedeemed(info).call();
-              
+             
               var apex=nftcat[1];
               var limited=nftcat[2];
               let catnft = 'Collector';
-
+              
              if (apex == true) {
                  catnft = 'Apex';
              } else if (limited == true) {
                  catnft = 'Limited';
              } else {
                  catnft = 'Collector';
+                 
              }
              const fecha= calculateTimeLeft(maturity);
              
- 
+             
 
              var reward=calculateMintReward(cRankk,term,maturity,Amplifierr,EAARR);
         
@@ -675,7 +656,7 @@ trHead.appendChild(thImg);
              const btnclaimtext="Claim "+ reward1*vmu;
              //alert(btnclaim);
              
-
+             
             // var fecha=
              //alert(info);
 // Crea una fila <tr> para el token
@@ -761,6 +742,7 @@ fetch(Nfturi)
 calculateTotalPages();
   showPage(currentPage);
   createPaginationButtons();
+ 
 
       }
 
@@ -999,7 +981,7 @@ calculateTotalPages();
               MintNFT();
             }
 
-
+           
         }
         
         function calculateTotalPages() {
