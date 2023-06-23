@@ -144,7 +144,7 @@ async function ConectarMetamask()
       GlobaRank();
 
     } else {
-      alert('Please connect  Metamask to ' + netw.value + ' Blockchain');
+      //alert('Please connect  Metamask to ' + netw.value + ' Blockchain');
       var conectar = document.getElementById("conectar");          
             // Cambia el valor del botón
             conectar.value = "Connect " + netw.value + " Chain";
