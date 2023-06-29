@@ -826,7 +826,7 @@ calculateTotalPages();
             if(selcatg.value==='collector'){
               selclass.disabled=true;
               burntext.value=0;
-              btnmint.textContent="Mint TEXNFT369";
+              btnmint.textContent="Mint TEXNFT";
              
             }
             else if(selcatg.value==='limited'){
