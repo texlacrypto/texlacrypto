@@ -75,7 +75,7 @@ async function ConectarMetamask()
   if(netw.value==='moonbeam'){
     //alert(netw.value);
       netid ='1284';
-      contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a5881';
+      contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a58819';
       symb.textContent='GLMR';
       
   }

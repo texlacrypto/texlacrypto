@@ -93,7 +93,7 @@ async function ConectarMetamask()
   if(netw.value==='moonbeam'){
     //alert(netw.value);
       netid ='1284';
-      contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a5881';
+      contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a58819';
               nftcontrato='0x446049284920E87F5Deb6EC1e88bA2d8eF6F1Ea2';
               MintInfocontract='0x8Bbe68b7D503Fb7b468bfd2351918f772033e025';
       symb.textContent='GLMR';
@@ -524,7 +524,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           if(currentNetwork==='1284'){
             //alert(netw.value);
               netw.value='moonbeam';
-              contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a5881';
+              contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a58819';
               nftcontrato='0x446049284920E87F5Deb6EC1e88bA2d8eF6F1Ea2';
               MintInfocontract='0x8Bbe68b7D503Fb7b468bfd2351918f772033e025';
               symb.textContent='GLMR';
