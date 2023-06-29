@@ -75,7 +75,7 @@ async function ConectarMetamask()
   if(netw.value==='moonbeam'){
     //alert(netw.value);
       netid ='1284';
-      contrato = '0x282FB260AD754d42e2b554Ba409ee6bFd6aB5928';
+      contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a5881';
       symb.textContent='GLMR';
       
   }
@@ -598,7 +598,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           if(currentNetwork==='1284'){
             //alert(netw.value);
               netw.value='moonbeam';
-              contrato = '0xfdE37824F9Dc448180CC6e38E0fd373493BA5eE4';
+              contrato = '0x10509cC297d1D546Ca435ff28BE9F206d62a5881';
               symb.textContent='GLMR';
               ConectarMetamask();
           }
