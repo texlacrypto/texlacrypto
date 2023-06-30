@@ -815,7 +815,7 @@ calculateTotalPages();
       
           TestConection();
           const  vmu= document.getElementById('vmu');
-          vmu.value=60;
+         /// vmu.value=60;
           const  term= document.getElementById('term');
            var vmunft=parseInt(vmu.value);
            var termnft=parseInt(term.value);
