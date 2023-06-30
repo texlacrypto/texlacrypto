@@ -123,6 +123,7 @@ async function ConectarMetamask()
       netid='9001';
       contrato = '0x2ab0e9e4ee70fff1fb9d67031e44f6410170d00e';
       nftcontrato='0x4c4cf206465abfe5cecb3b581fa1b508ec514692';
+      MintInfocontract='0x8E2DF25F70534f8234Ef89419E4fa825F8690060';
       symb.textContent='EVMOS';
       
   }
@@ -564,6 +565,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               netw.value='evmos';
               contrato = '0x2ab0e9e4ee70fff1fb9d67031e44f6410170d00e';
               nftcontrato='0x4c4cf206465abfe5cecb3b581fa1b508ec514692';
+              MintInfocontract='0x8E2DF25F70534f8234Ef89419E4fa825F8690060';
               symb.textContent='EVMOS';
               ConectarMetamask();
               
