@@ -256,10 +256,7 @@ async function ObtenerCuenta(){
       var  balancevlxen = document.getElementById("balancevlxen"); 
       const resultado = Number(balancevlXen) / 10**18;
       balancevlxen.textContent=resultado;
-      var  pow = document.getElementById("power");
-     const pwer=await GetPowerAmount();
-     
-     pow.textContent=pwer.toString();
+      
     
   
       
@@ -271,6 +268,10 @@ async function ObtenerCuenta(){
             conectar.value = primeros + "........."+ ultimos;    
             NftCatClass();
             ListadoTEXNFT();
+            var  pow = document.getElementById("power");
+     const pwer=await GetPowerAmount();
+     
+     pow.textContent=pwer.toString();
             
 
 }   

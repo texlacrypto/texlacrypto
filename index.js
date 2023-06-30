@@ -226,10 +226,7 @@ async function ObtenerCuenta(){
       var  balancevlxen = document.getElementById("balancevlxen"); 
       const resultado = Number(balancevlXen) / 10**18;
       balancevlxen.textContent=resultado;
-      var  pow = document.getElementById("power");
-     const pwer=await GetPowerAmount();
      
-     pow.textContent=pwer.toString();
     
   
       
@@ -237,7 +234,11 @@ async function ObtenerCuenta(){
         var ultimos = address.slice(-6);
             var conectar = document.getElementById("conectar");          
             // Cambia el valor del botón
-            conectar.value = primeros + "........."+ ultimos;    
+            conectar.value = primeros + "........."+ ultimos;  
+             var  pow = document.getElementById("power");
+     const pwer=await GetPowerAmount();
+     
+     pow.textContent=pwer.toString();  
 
 
 }   
