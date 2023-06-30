@@ -98,6 +98,14 @@ async function ConectarMetamask()
       symb.textContent='BNB';
       
   }
+  if(netw.value==='evmos'){
+    //alert(netw.value);
+      netid='9001';
+      contrato = '0x2ab0e9e4ee70fff1fb9d67031e44f6410170d00e';
+      nftcontrato='0x4c4cf206465abfe5cecb3b581fa1b508ec514692';
+      symb.textContent='EVMOS';
+      
+  }
   if(netw.value==='tlos'){
     //alert(netw.value);
       netid='40';
@@ -622,6 +630,15 @@ function calculateTimeLeft(maturityTimeInSeconds) {
              
               symb.textContent='MATIC';
               ConectarMetamask();
+          }
+          if(netw.value==='9001'){
+            //alert(netw.value);
+              netw.value='evmos';
+              contrato = '0x2ab0e9e4ee70fff1fb9d67031e44f6410170d00e';
+              nftcontrato='0x4c4cf206465abfe5cecb3b581fa1b508ec514692';
+              symb.textContent='EVMOS';
+              ConectarMetamask();
+              
           }
           if(currentNetwork==='40'){
             //alert(netw.value);
