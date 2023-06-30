@@ -267,6 +267,7 @@ async function ObtenerCuenta(){
         var ultimos = address.slice(-6);
             var conectar = document.getElementById("conectar");          
             // Cambia el valor del botón
+           
             conectar.value = primeros + "........."+ ultimos;    
             NftCatClass();
             ListadoTEXNFT();
