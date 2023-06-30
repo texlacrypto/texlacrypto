@@ -102,7 +102,6 @@ async function ConectarMetamask()
     //alert(netw.value);
       netid='9001';
       contrato = '0x2ab0e9e4ee70fff1fb9d67031e44f6410170d00e';
-      nftcontrato='0x4c4cf206465abfe5cecb3b581fa1b508ec514692';
       symb.textContent='EVMOS';
       
   }
