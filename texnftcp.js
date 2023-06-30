@@ -821,7 +821,7 @@ calculateTotalPages();
            var termnft=parseInt(term.value);
           var amount=parseInt(amountBurn);
          
-          alert(amount);
+          
            
             address = (await web3.eth.getAccounts())[0];
             const contract = new web3.eth.Contract(JSON.parse(nftabi), nftcontrato);   
