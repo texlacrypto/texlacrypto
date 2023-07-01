@@ -1040,3 +1040,203 @@ calculateTotalPages();
             pagination.appendChild(button);
           }
         }
+
+        function ListarNFT()
+        {
+          const chkclaim= document.getElementById('checkclaim');
+          if(chkclaim.checked){
+            OnlyCalimable();
+          }
+          else{
+            ListadoTEXNFT();
+          }
+        }
+        async function OnlyCalimable(){
+          TestConection();
+          address = (await web3.eth.getAccounts())[0];
+          
+          const tbody=document.getElementById('nftlistado');
+         
+          tbody.innerHTML = "";
+// Crear la fila del encabezado (<thead>)
+var thead = document.createElement("thead");
+tbody.appendChild(thead);
+
+// Crear la fila de datos (<tbody>)
+var tbodyData = document.createElement("tbody");
+tbody.appendChild(tbodyData);
+
+// Agregar los títulos de las columnas en la fila del encabezado
+var trHead = document.createElement("tr");
+thead.appendChild(trHead);
+
+var thId = document.createElement("th");
+thId.textContent = "ID";
+trHead.appendChild(thId);
+
+var thNFT = document.createElement("th");
+thNFT.textContent = "NFT";
+trHead.appendChild(thNFT);
+
+var thvmu = document.createElement("th");
+thvmu.textContent = "VMU";
+trHead.appendChild(thvmu);
+
+var thterm = document.createElement("th");
+thterm.textContent = "TERM";
+trHead.appendChild(thterm);
+
+var thClaim = document.createElement("th");
+thClaim.textContent = "TEX TO CLAIM";
+trHead.appendChild(thClaim);
+
+var thTime = document.createElement("th");
+thTime.textContent = "TIME TO CLAIM";
+trHead.appendChild(thTime);
+
+var thImg = document.createElement("th");
+thImg.textContent = "IMAGE";
+trHead.appendChild(thImg);
+
+          const contract = new web3.eth.Contract(JSON.parse(nftabi), nftcontrato);   
+          const receipt = await contract.methods.ownedTokens().call({ from: address });            
+          
+         
+         
+
+
+          
+          for (var i = 0; i < receipt.length; i++) {
+            var token = receipt[i];
+            const contract1 = new web3.eth.Contract(JSON.parse(nftabi),nftcontrato );   
+            const info = await contract1.methods.mintInfo(token).call();
+            var Nfturi = await contract1.methods.tokenURI(token).call();
+            var vmu = await contract1.methods.vmuCount(token).call();
+            const contract2 = new web3.eth.Contract(JSON.parse(abiMintInfo),MintInfocontract );   
+            const term = await contract2.methods.getTerm(info).call();
+            const maturity = await contract2.methods.getMaturityTs(info).call();
+            const cRankk = await contract2.methods.getRank(info).call();
+            const Amplifierr = await contract2.methods.getAMP(info).call();
+            const EAARR = await contract2.methods.getEAA(info).call();
+            const nftcat = await contract2.methods.getClass(info).call();
+            const redeemed = await contract2.methods.getRedeemed(info).call();
+           
+            var apex=nftcat[1];
+            var limited=nftcat[2];
+            let catnft = 'Collector';
+            
+           if (apex == true) {
+               catnft = 'Apex';
+           } else if (limited == true) {
+               catnft = 'Limited';
+           } else {
+               catnft = 'Collector';
+               
+           }
+           const fecha= calculateTimeLeft(maturity);
+           
+           
+
+           var reward=calculateMintReward(cRankk,term,maturity,Amplifierr,EAARR);
+      
+           const reward1=((await reward).toString());
+          
+           //const reward2=reward1.slice(0,-1);
+           
+           const btnclaimtext="Claim "+ reward1*vmu;
+           //alert(btnclaim);
+          if(fecha=="Can Calim"){
+ // var fecha=
+           //alert(info);
+// Crea una fila <tr> para el token
+var tr = document.createElement("tr");
+tbodyData.appendChild(tr);
+
+// Crea una celda <td> para el ID del token
+var tdId = document.createElement("td");
+tdId.textContent = token;
+tr.appendChild(tdId);
+
+// Crea una celda <td> para el nombre del NFT
+var tdName = document.createElement("td");
+tdName.textContent ='TEXNFT ('+ catnft+')' ;
+tr.appendChild(tdName);
+
+ // Crea una celda <td> para el Vmu
+ var tdvmu = document.createElement("td");
+ tdvmu.textContent = vmu ;
+ tr.appendChild(tdvmu);
+
+  // Crea una celda <td> para el Term
+var tdterm = document.createElement("td");
+tdterm.textContent = term ;
+tr.appendChild(tdterm);
+
+// Crea una celda <td> para el botón de CLAIM
+var tdClaim = document.createElement("td");
+tr.appendChild(tdClaim);
+// Crea un botón para el elemento
+var btnClaim = document.createElement("button");
+btnClaim.type = "button";
+btnClaim.id = token;
+btnClaim.textContent = btnclaimtext;
+if(redeemed==true){
+  btnClaim.textContent="Redeemed";
+  btnClaim.disabled=true;
+  
+}
+
+btnClaim.style.width = "180px"; // Establece el ancho del botón
+btnClaim.style.height = "45px"; // Establece la altura del botón
+btnClaim.classList.add("btnclaim");
+tdClaim.appendChild(btnClaim);
+// Agrega un evento click al botón y llama a la función claim() con el número de token del elemento
+btnClaim.onclick = function() {
+  ClaimNft(this.id);
+};
+
+// Crea una celda <td> para el tiempo
+
+  
+  var tdTime = document.createElement("td");
+tdTime.textContent = fecha;
+if(redeemed==true){
+  tdTime.textContent = "Redeemed";
+  
+}
+tr.appendChild(tdTime);
+
+
+/*// Crea una celda <td> para la imagen
+var tdImage = document.createElement("td");
+tr.appendChild(tdImage);
+
+// Crea un elemento <img> para la imagen
+var imgElement = document.createElement("img"); 
+imgElement.src = Nfturi;
+var tdImage = document.createElement("td");
+tr.appendChild(tdImage);
+
+fetch(Nfturi)
+.then(response => response.text())
+.then(svgContent => {
+  // Crear un elemento <svg> y asignar el contenido del SVG
+  const svgElement = document.createElement("svg");
+  svgElement.innerHTML = svgContent;
+
+  // Agregar el elemento <svg> a la celda de la tabla
+  tdImage.appendChild(svgElement);
+});*/
+
+          }
+           
+         
+
+
+}
+calculateTotalPages();
+showPage(currentPage);
+createPaginationButtons();
+
+
+        }
