@@ -447,7 +447,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
   const remainingTime = maturityTime - currentTime;
   const count=document.getElementById('countdown');
   if (remainingTime < 0) {
-      const textContent='El tiempo ha expirado';
+      const textContent='Can Claim';
       return textContent;
   } else {
     const seconds = Math.floor((remainingTime / 1000) % 60);
