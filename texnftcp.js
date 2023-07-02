@@ -1145,7 +1145,7 @@ trHead.appendChild(thImg);
            
            const btnclaimtext="Claim "+ reward1*vmu;
            //alert(btnclaim);
-          if(fecha=="Can Claim"){
+          if(fecha=="Can Claim" && redeemed==false){
  // var fecha=
            //alert(info);
 // Crea una fila <tr> para el token
