@@ -112,6 +112,13 @@ async function ConectarMetamask()
       symb.textContent='TLOS';
       
   }
+  if(netw.value==='TENET'){
+    //alert(netw.value);
+      netid='1559';
+      contrato = '0xEDc628042AAbF9Edf89F416FE8E30CBdFbcf68C7';
+      symb.textContent='TENET';
+      
+  }
   
  
  

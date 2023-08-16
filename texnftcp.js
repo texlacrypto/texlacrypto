@@ -137,6 +137,15 @@ async function ConectarMetamask()
       symb.textContent='TLOS';
       
   }
+  if(netw.value==='TENET'){
+    //alert(netw.value);
+      netid='1559';
+      contrato = '0xEDc628042AAbF9Edf89F416FE8E30CBdFbcf68C7';
+      nftcontrato='0x85f66Bc152fC639627CC41bA90CCbDA741aF26D7';
+      MintInfocontract='0x581Cc74Ecd4d05839032058E94870220821b45A1';
+      symb.textContent='TENET';
+      
+  }
   
  
  
@@ -583,6 +592,16 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               ConectarMetamask();
              
           }          
+          if(currentNetwork==='1559'){
+            //alert(netw.value);
+            netw.value='TENET';
+              contrato = '0xEDc628042AAbF9Edf89F416FE8E30CBdFbcf68C7';
+              nftcontrato='0x85f66Bc152fC639627CC41bA90CCbDA741aF26D7';
+              MintInfocontract='0x581Cc74Ecd4d05839032058E94870220821b45A1';
+              symb.textContent='TENET';
+              ConectarMetamask();
+              
+          }
                  
       }
      
