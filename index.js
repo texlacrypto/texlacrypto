@@ -653,7 +653,15 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0x0d8ef82D3dce71D1FdCE83f4a6C6B9692B87Efd9';
               symb.textContent='TLOS';
               ConectarMetamask();
-          }          
+          }   
+          if(currentNetwork==='1559'){
+            //alert(netw.value);
+              netw.value='TENET';
+              contrato = '0xEDc628042AAbF9Edf89F416FE8E30CBdFbcf68C7';
+              symb.textContent='TENET';
+              ConectarMetamask();
+          }        
+
                  
       }
       async function SendPower(){
