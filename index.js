@@ -124,7 +124,7 @@ async function ConectarMetamask()
       netid='534351';
       contrato = '0x2DC4ec9c7529F18Af709A144e4F63d18Fd9b2f0b';
       symb.textContent='ETH';
-      
+      ConectarMetamask();
   }
   
  
