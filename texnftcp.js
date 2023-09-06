@@ -146,6 +146,15 @@ async function ConectarMetamask()
       symb.textContent='TENET';
       
   }
+  if(netw.value==='scroll'){
+    //alert(netw.value);
+      netid='534351';
+      contrato = '0x2DC4ec9c7529F18Af709A144e4F63d18Fd9b2f0b';
+      nftcontrato='0x6c9eBF33A4D44b5F7Ad2354c59272a09830851cd';
+      MintInfocontract='0x11EdEB9fF2A00C299CA663c234C5083A0deBb9e5';
+      symb.textContent='ETH';
+      
+  }
   
  
  
@@ -599,6 +608,16 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               nftcontrato='0x85f66Bc152fC639627CC41bA90CCbDA741aF26D7';
               MintInfocontract='0x581Cc74Ecd4d05839032058E94870220821b45A1';
               symb.textContent='TENET';
+              ConectarMetamask();
+              
+          }
+          if(currentNetwork==='534351'){
+            //alert(netw.value);
+            netw.value='scroll';
+              contrato = '0x2DC4ec9c7529F18Af709A144e4F63d18Fd9b2f0b';
+              nftcontrato='0x6c9eBF33A4D44b5F7Ad2354c59272a09830851cd';
+              MintInfocontract='0x11EdEB9fF2A00C299CA663c234C5083A0deBb9e5';
+              symb.textContent='ETH';
               ConectarMetamask();
               
           }

@@ -119,6 +119,13 @@ async function ConectarMetamask()
       symb.textContent='TENET';
       
   }
+  if(netw.value==='scroll'){
+    //alert(netw.value);
+      netid='534351';
+      contrato = '0x2DC4ec9c7529F18Af709A144e4F63d18Fd9b2f0b';
+      symb.textContent='ETH';
+      
+  }
   
  
  
@@ -660,7 +667,14 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0xEDc628042AAbF9Edf89F416FE8E30CBdFbcf68C7';
               symb.textContent='TENET';
               ConectarMetamask();
-          }        
+          }   
+          if(currentNetwork==='534351'){
+            //alert(netw.value);
+              netw.value='scroll';
+              contrato = '0x2DC4ec9c7529F18Af709A144e4F63d18Fd9b2f0b';
+              symb.textContent='ETH';
+              ConectarMetamask();
+          }      
 
                  
       }
