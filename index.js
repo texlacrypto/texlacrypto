@@ -126,6 +126,13 @@ async function ConectarMetamask()
       symb.textContent='ETH';
      
   }
+  if(netw.value==='taiko'){
+    //alert(netw.value);
+      netid='167006';
+      contrato = '0x4577D997dA06218390254a059D0B47ED08310D8F';
+      symb.textContent='ETH';
+     
+  }
   
  
  
@@ -674,7 +681,14 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0x2DC4ec9c7529F18Af709A144e4F63d18Fd9b2f0b';
               symb.textContent='ETH';
               ConectarMetamask();
-          }      
+          }     
+          if(currentNetwork==='167006'){
+            //alert(netw.value);
+              netw.value='taiko';
+              contrato = '0x4577D997dA06218390254a059D0B47ED08310D8F';
+              symb.textContent='ETH';
+              ConectarMetamask();
+          }     
 
                  
       }

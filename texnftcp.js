@@ -155,6 +155,15 @@ async function ConectarMetamask()
       symb.textContent='ETH';
       
   }
+  if(netw.value==='taiko'){
+    //alert(netw.value);
+      netid='167006';
+      ontrato = '0x4577D997dA06218390254a059D0B47ED08310D8F';
+      nftcontrato='0x8625C1F45495cf178246Eef043562Bdf6a5BFD93';
+      MintInfocontract='0x361b033942BF9a277CC01aFF335663B3764208ac';
+      symb.textContent='ETH';
+     
+  }
   
  
  
@@ -617,6 +626,16 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               contrato = '0x2DC4ec9c7529F18Af709A144e4F63d18Fd9b2f0b';
               nftcontrato='0x6c9eBF33A4D44b5F7Ad2354c59272a09830851cd';
               MintInfocontract='0x11EdEB9fF2A00C299CA663c234C5083A0deBb9e5';
+              symb.textContent='ETH';
+              ConectarMetamask();
+              
+          }
+          if(currentNetwork==='167006'){
+            //alert(netw.value);
+            netw.value='taiko';
+              contrato = '0x4577D997dA06218390254a059D0B47ED08310D8F';
+              nftcontrato='0x8625C1F45495cf178246Eef043562Bdf6a5BFD93';
+              MintInfocontract='0x361b033942BF9a277CC01aFF335663B3764208ac';
               symb.textContent='ETH';
               ConectarMetamask();
               
