@@ -164,6 +164,15 @@ async function ConectarMetamask()
       symb.textContent='ETH';
      
   }
+  if(netw.value==='base'){
+    //alert(netw.value);
+      netid='8453';
+      contrato = '0xffcbf84650ce02dafe96926b37a0ac5e34932fa5';
+      nftcontrato='0x379002701BF6f2862e3dFdd1f96d3C5E1BF450B6';
+      MintInfocontract='0x41Ef68B460871aCBbD355137134D7E278D2EFE82';   
+      symb.textContent='ETH';
+     
+  }
   
  
  
@@ -640,6 +649,17 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               ConectarMetamask();
               
           }
+          if(currentNetwork==='8453'){
+            //alert(netw.value);
+            netw.value='base';
+            contrato = '0xffcbf84650ce02dafe96926b37a0ac5e34932fa5';
+            nftcontrato='0x379002701BF6f2862e3dFdd1f96d3C5E1BF450B6';
+            MintInfocontract='0x41Ef68B460871aCBbD355137134D7E278D2EFE82';
+              symb.textContent='ETH';
+              ConectarMetamask();
+              
+          }
+          
                  
       }
      
