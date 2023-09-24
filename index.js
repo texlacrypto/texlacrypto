@@ -129,7 +129,7 @@ async function ConectarMetamask()
   if(netw.value==='taiko'){
     //alert(netw.value);
       netid='167006';
-      contrato = '0x4577D997dA06218390254a059D0B47ED08310D8F';
+      contrato = '0x72e4b7E85BF174292A10c87b7ac274E6f60073BE';
       symb.textContent='ETH';
      
   }
@@ -693,7 +693,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
           if(currentNetwork==='167006'){
             //alert(netw.value);
               netw.value='taiko';
-              contrato = '0x4577D997dA06218390254a059D0B47ED08310D8F';
+              contrato = '0x72e4b7E85BF174292A10c87b7ac274E6f60073BE';
               symb.textContent='ETH';
               ConectarMetamask();
           }   
@@ -705,7 +705,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               ConectarMetamask();
           }     
           
-
+          
                  
       }
       async function SendPower(){
