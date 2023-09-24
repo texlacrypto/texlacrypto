@@ -157,7 +157,7 @@ async function ConectarMetamask()
   }
   if(netw.value==='taiko'){
     //alert(netw.value);
-      netid='167006';
+      netid='167007';
       contrato = '0x72e4b7E85BF174292A10c87b7ac274E6f60073BE';
       nftcontrato='0x11EdEB9fF2A00C299CA663c234C5083A0deBb9e5';
       MintInfocontract='0x181BE9b993cB9384c0B07381B771268dB6A2aC67';
@@ -639,7 +639,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               ConectarMetamask();
               
           }
-          if(currentNetwork==='167006'){
+          if(currentNetwork==='167007'){
             //alert(netw.value);
             netw.value='taiko';
             contrato = '0x72e4b7E85BF174292A10c87b7ac274E6f60073BE';

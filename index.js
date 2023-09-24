@@ -128,7 +128,7 @@ async function ConectarMetamask()
   }
   if(netw.value==='taiko'){
     //alert(netw.value);
-      netid='167006';
+      netid='167007';
       contrato = '0x72e4b7E85BF174292A10c87b7ac274E6f60073BE';
       symb.textContent='ETH';
      
@@ -690,7 +690,7 @@ function calculateTimeLeft(maturityTimeInSeconds) {
               symb.textContent='ETH';
               ConectarMetamask();
           }     
-          if(currentNetwork==='167006'){
+          if(currentNetwork==='167007'){
             //alert(netw.value);
               netw.value='taiko';
               contrato = '0x72e4b7E85BF174292A10c87b7ac274E6f60073BE';
